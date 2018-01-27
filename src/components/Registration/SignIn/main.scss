@@ -1,0 +1,35 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+.sign-in {
+  &__content {
+    width: 37.5rem;
+    margin: 4.875rem auto 0;
+  }
+}
+
+.sign-in-form {
+  &__title {
+    text-align: center;
+    font-size: 1.563rem;
+    color: $darken-gray;
+    margin: .1875rem 0 4.25rem;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 1.688rem;
+}
+
+.form-group:nth-last-child(2) {
+  width: 15.63rem;
+  margin: 1.1rem auto 0;
+}
+
+.form-group:last-child {
+  margin-top: 0.65rem;
+  text-align: center;
+  a {
+    color: $darken-gray;
+  }
+}
