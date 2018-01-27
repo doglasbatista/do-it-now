@@ -23,6 +23,7 @@ button,
 
 .btn-secondary {
   @extend .btn;
+  color: $darken-gray;
   background-color: $secondary-color;
   border-color: $secondary-color;
   transition: .2s;
