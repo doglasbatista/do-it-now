@@ -1,0 +1,23 @@
+.home-section {
+  background-image: url(./imgs/pattern.png);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  &__container {
+    width: 500px;
+    margin: 10.4rem auto 0;
+    text-align: center;
+  }
+}
+
+.logo {
+  margin-top: 2rem;
+}
+
+.navigation-container {
+  margin: 4.2rem auto 0;
+  width: 15.6rem;
+  button:first-child {
+    margin-bottom: .6rem;
+  }
+}
