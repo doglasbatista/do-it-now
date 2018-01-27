@@ -1,9 +1,9 @@
 <template>
-  <section class="sign-up">
-    <div class="sign-up__content">
+  <section class="sign-in">
+    <div class="sign-in__content">
       <img class="logo" src="~@/assets/imgs/logo.png">
-      <form class="card sign-up-form">
-        <legend class="sign-up-form__title">Criar Conta</legend>
+      <form class="card sign-in-form">
+        <legend class="sign-in-form__title">Entrar</legend>
 
         <div class="form-group">
           <label for="name">Nome</label>
@@ -13,17 +13,6 @@
             name="name"
             id="name"
             placeholder="Nome"
-          >
-        </div>
-
-        <div class="form-group">
-          <label for="email">Endereco de e-mail</label>
-          <input
-            type="email"
-            class="no-radius"
-            name="email"
-            id="email"
-            placeholder="Endereco de e-mail"
           >
         </div>
 
@@ -39,7 +28,11 @@
         </div>
 
         <div class="form-group">
-          <button class="btn-primary" type="submit">Criar Conta</button>
+          <button class="btn-secondary" type="submit">Entrar</button>
+        </div>
+
+        <div class="form-group">
+          <a class="forgot-your-password">Esqueceu a Senha?</a>
         </div>
       </form>
     </div>
@@ -49,7 +42,7 @@
 <script>
 
 export default {
-
+  name: 'SignIn',
 };
 
 </script>
