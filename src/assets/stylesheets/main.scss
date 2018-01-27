@@ -5,9 +5,11 @@
 @import './config/main.scss';
 
 
-// ABSTRACT CLASSES
-@import './abstract-classes/button.scss';
-
-
 // COMPONENTS
 @import './components/card';
+@import './components/input';
+@import './components/button.scss';
+
+
+// HELPERS
+@import './helpers/input.scss'
