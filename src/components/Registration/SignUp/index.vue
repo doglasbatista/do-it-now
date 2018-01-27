@@ -1,5 +1,6 @@
 <template>
   <section class="sign-up">
+    <background-pattern />
     <div class="sign-up__content">
       <img class="logo" src="~@/assets/imgs/logo.png">
       <form class="card sign-up-form">
@@ -47,9 +48,13 @@
 </template>
 
 <script>
+import BackgroundPattern from '@/components/shared/BackgroundPattern';
 
 export default {
-
+  name: 'SignUp',
+  components: {
+    BackgroundPattern,
+  },
 };
 
 </script>

@@ -1,0 +1,14 @@
+$z-layers: (
+  betrayal: -1,
+  anger: 0,
+  limbo: 1,
+);
+
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "`#{$key}` is an unknown $z-layers value.";
+  @return null;
+}

@@ -1,0 +1,13 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(./imgs/pattern.png);
+  background-color: #faf4c2;
+  opacity: .6;
+  z-index: z(betrayal);
+}
