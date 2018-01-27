@@ -1,5 +1,13 @@
 @import './reset.scss';
 
+
+// CONFIG
 @import './config/main.scss';
 
+
+// ABSTRACT CLASSES
 @import './abstract-classes/button.scss';
+
+
+// COMPONENTS
+@import './components/card';

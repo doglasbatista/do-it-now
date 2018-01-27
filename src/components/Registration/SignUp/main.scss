@@ -1,0 +1,36 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+
+.sign-up {
+  &__content {
+    width: 26.25rem;
+    margin: 4.875rem auto 0;
+  }
+}
+
+.sign-up-form {
+  padding-top: 5.625rem;
+  &__title {
+    text-align: center;
+    font-size: 1.563rem;
+    color: $darken-gray;
+    position: relative;
+    margin: 4.71rem 0 3.75rem;
+    &::before {
+      position: absolute;
+      top: -5.535rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: '';
+      width: 4.71rem;
+      height: 4.71rem;
+      background-image: url(./imgs/camera.png);
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 1.688rem;
+}
