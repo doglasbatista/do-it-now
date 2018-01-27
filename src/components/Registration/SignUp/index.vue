@@ -4,6 +4,7 @@
     <div class="sign-up__content">
       <img class="logo" src="~@/assets/imgs/logo.png">
       <form class="card sign-up-form">
+        <back-button />
         <legend class="sign-up-form__title">Criar Conta</legend>
 
         <div class="form-group">
@@ -49,11 +50,13 @@
 
 <script>
 import BackgroundPattern from '@/components/shared/BackgroundPattern';
+import BackButton from '@/components/shared/BackButton';
 
 export default {
   name: 'SignUp',
   components: {
     BackgroundPattern,
+    BackButton,
   },
 };
 
