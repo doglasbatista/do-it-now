@@ -19,6 +19,10 @@
           <label for="password">Senha</label>
           <input type="password" class="not-radius-top" name="password" id="password" placeholder="Senha">
         </div>
+
+        <div class="form-group">
+          <button class="btn-primary" type="submit">Criar Conta</button>
+        </div>
       </form>
     </div>
   </section>
