@@ -6,19 +6,19 @@
       <button class="destroy-task"></button>
     </legend>
     <sub-tasks />
-    <add-sub-tasks />
+    <new-sub-tasks />
   </section>
 </template>
 
 <script>
 import SubTasks from './SubTasks';
-import AddSubTasks from './AddSubTasks';
+import NewSubTasks from './NewSubTasks';
 
 export default {
   name: 'Task',
   components: {
     SubTasks,
-    AddSubTasks,
+    NewSubTasks,
   },
 };
 

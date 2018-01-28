@@ -1,12 +1,8 @@
 @import '~@/assets/stylesheets/config/main.scss';
 
-[type='text'].new-task {
-  padding: .4rem .5rem;
-  border-color: $primary-color;
-}
-
 .tasks {
   width: 83.333% !important;
+  margin-top: .4375rem !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding-left: 0 !important;

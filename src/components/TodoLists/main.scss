@@ -57,3 +57,13 @@
 .list-icon {
   height: .9375rem !important;
 }
+
+[type='text'].new-task,
+[type='text'].new-subtask {
+  padding: .4rem .5rem;
+  border-color: $primary-color;
+  position: relative;
+  background-image: url(./imgs/add-item.png);
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}

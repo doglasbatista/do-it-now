@@ -27,5 +27,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import './main.scss';
   @import './tasks.scss';
 </style>
