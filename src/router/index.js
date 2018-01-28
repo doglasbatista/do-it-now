@@ -7,6 +7,7 @@ import SignUp from '@/components/Registration/SignUp';
 import SignIn from '@/components/Registration/SignIn';
 
 import TodoLists from '@/components/TodoLists';
+import NewTodoList from '@/components/NewTodoList';
 
 
 Vue.use(Router);
@@ -32,6 +33,11 @@ export default new Router({
       path: '/todolists',
       name: 'TodoLists',
       component: TodoLists,
+    },
+    {
+      path: '/todolists/new',
+      name: 'NewTodoList',
+      component: NewTodoList,
     },
   ],
 });

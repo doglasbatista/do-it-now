@@ -1,0 +1,17 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+.tasks-list {
+  list-style-type: none;
+  margin-bottom: .9rem;
+}
+
+label {
+  display: inline-block;
+}
+
+.item {
+  padding-left: .95rem;
+  padding-bottom: .45rem;
+  border-bottom: .0625rem solid $green;
+  margin-bottom: 0.59rem;
+}

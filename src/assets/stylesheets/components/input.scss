@@ -25,6 +25,7 @@ input::placeholder {
   display: none;
   & + label {
     position: relative;
+    margin-left: 1.6rem;
     &::before {
       cursor: pointer;
       position: absolute;

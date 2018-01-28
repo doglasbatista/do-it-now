@@ -1,0 +1,30 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+.create-todolist {
+  margin-top: 2.5rem;
+  &__title {
+    font-size: 1.438rem;
+    color: $darken-gray;
+    margin-bottom: .3rem;
+  }
+}
+
+[type='text'].new-list,
+[type='text'].new-task {
+  padding: .5rem 0.85rem;
+  border-color: $primary-color;
+  display: block;
+  margin: 0 auto .625rem;
+}
+
+[type='text'].new-task {
+  background-image: url(~@/assets/imgs/add-item.png);
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}
+
+button {
+  display: block;
+  width: 12.5rem;
+  margin: 1.9rem auto 0;
+}
