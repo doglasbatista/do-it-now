@@ -20,3 +20,31 @@ label {
 input::placeholder {
   color: $darken-gray;
 }
+
+[type='checkbox'] {
+  display: none;
+  & + label {
+    position: relative;
+    &::before {
+      cursor: pointer;
+      position: absolute;
+      content: '';
+      width: .9375rem;
+      height: .9375rem;
+      border: .0625rem solid $green;
+      left: -1.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .3s;
+    }
+  }
+  &:checked + label:before {
+    border-top: none;
+    border-left: none;
+    width: .625rem;
+    top: 35%;
+    left: -1.625rem;
+    transform: translateY(-50%) rotate(35deg);
+    transition: .3s;
+  }
+}
