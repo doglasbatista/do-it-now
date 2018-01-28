@@ -1,0 +1,24 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+label {
+  display: inline-block;
+}
+
+.task {
+  margin-top: .7rem;
+  margin-left: 2.813rem;
+  &__title {
+    border-bottom: .0625rem solid $green;
+    padding-bottom: .6875rem;
+  }
+}
+
+.destroy-task {
+  background-color: transparent;
+  border: none;
+  background-image: url(./imgs/delete-list.png);
+  background-repeat: no-repeat;
+  width: .9375rem;
+  height: .9375rem;
+  float: right;
+}
