@@ -1,0 +1,56 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+.add-item {
+  background-image: url(./imgs/add-item.png);
+  background-repeat: no-repeat;
+  height: 1.375rem;
+  width: 1.375rem;
+  background-color: transparent;
+  border: none;
+}
+
+.todo-lists {
+  &-content {
+    width: 37.5rem;
+    margin:  2.5rem auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    font-size: 1.438rem;
+  }
+}
+
+.todo-list {
+  border: .0625rem solid $green;
+  border-radius: .3rem;
+  width: 100%;
+  margin-top: .3125rem;
+}
+
+.todo-item {
+  padding: 10px;
+  cursor: pointer;
+  gg:
+    columns(20px auto 60px)
+    rows(15px 15px 20px);
+  &:not(:last-child) {
+    border-bottom: .0625rem solid $green;
+  }
+  &__control-box {
+    gg:
+      columns(22px 22px)
+      gutter(6px, 0)
+      technique(negative-margin)
+      support(float);
+  }
+  &__control-item {
+    width: 1.375rem;
+    height: 1.375rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+}
