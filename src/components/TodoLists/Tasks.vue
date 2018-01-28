@@ -1,32 +1,21 @@
 <template>
   <section class="tasks">
-    <div class="form-group">
-      <label for="new-task">Adicionar tarefa</label>
-      <input
-        type="text"
-        name="new-task"
-        id="new-task"
-        class="new-task"
-        placeholder="Adicionar tarefa"
-      >
-    </div>
+    <new-task />
     <task />
   </section>
 </template>
 
 <script>
 import Task from './Task';
+import NewTask from './NewTask';
 
 export default {
   name: 'Tasks',
   components: {
     Task,
+    NewTask,
   },
 };
 
 </script>
 
-<style lang="scss" scoped>
-  @import './main.scss';
-  @import './tasks.scss';
-</style>

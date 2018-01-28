@@ -28,13 +28,16 @@
   border-radius: .3rem;
   width: 100%;
   margin-top: .3125rem;
+  list-style-type: none;
 }
 
 .todo-item {
-  padding: 10px;
-  cursor: pointer;
-  gg:
-    columns(20px auto 60px, 100%);
+  &__indicator {
+    cursor: pointer;
+    margin: .65rem .3rem .2rem .6rem;
+    gg:
+      columns(20px auto 60px, 100%);
+  }
   &:not(:last-child) {
     border-bottom: .0625rem solid $green;
   }
@@ -66,4 +69,7 @@
   background-image: url(./imgs/add-item.png);
   background-repeat: no-repeat;
   background-position: 98% 50%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
 }

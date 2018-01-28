@@ -1,7 +1,13 @@
 <template>
   <div class="form-group">
     <label for="new-subtask">Adicionar subtarefa</label>
-    <input type="text" name="new-subtask" id="new-subtask" class="new-subtask" placeholder="Adicionar subtarefa">
+    <input
+      type="text"
+      name="new-subtask"
+      id="new-subtask"
+      class="new-subtask"
+      placeholder="Adicionar subtarefa"
+    >
   </div>
 </template>
 
