@@ -10,13 +10,18 @@
         <img src="./imgs/delete-list.png">
       </button>
     </div>
+    <tasks />
   </li>
 </template>
 
 <script>
+import Tasks from './Tasks';
 
 export default {
   name: 'TodoItem',
+  components: {
+    Tasks,
+  },
 };
 
 </script>

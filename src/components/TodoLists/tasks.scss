@@ -1,0 +1,10 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+[type='text'].new-task {
+  padding: .4rem .5rem;
+  border-color: $primary-color;
+}
+
+.tasks {
+  padding-bottom: 2.2rem;
+}

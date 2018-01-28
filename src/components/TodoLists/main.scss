@@ -34,7 +34,7 @@
   padding: 10px;
   cursor: pointer;
   gg:
-    columns(20px auto 60px)
+    columns(20px auto 60px, 100%)
     rows(15px 15px 20px);
   &:not(:last-child) {
     border-bottom: .0625rem solid $green;
