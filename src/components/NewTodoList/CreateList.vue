@@ -2,7 +2,13 @@
   <form>
     <div class="form-group">
       <label for="new-list">Digite o nome da lista...</label>
-      <input type="text" name="new-list" id="new-list" class="new-list" placeholder="Digite o nome da lista...">
+      <input
+        type="text"
+        name="new-list"
+        id="new-list"
+        class="new-list"
+        placeholder="Digite o nome da lista..."
+      >
     </div>
   </form>
 </template>

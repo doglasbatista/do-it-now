@@ -2,7 +2,13 @@
   <form>
     <div class="form-group">
       <label for="new-task">Adicionar tarefa</label>
-      <input type="text" name="new-task" id="new-task" class="new-task" placeholder="Adicionar tarefa">
+      <input
+        type="text"
+        name="new-task"
+        id="new-task"
+        class="new-task"
+        placeholder="Adicionar tarefa"
+      >
     </div>
   </form>
 </template>
