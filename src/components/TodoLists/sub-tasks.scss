@@ -1,0 +1,28 @@
+@import '~@/assets/stylesheets/config/main.scss';
+
+.sub-tasks {
+  list-style-type: none;
+}
+
+label {
+  display: inline-block;
+}
+
+.destroy-task {
+  background-color: transparent;
+  border: none;
+  background-image: url(./imgs/delete-subtask.png);
+  background-repeat: no-repeat;
+  width: .9375rem;
+  height: .9375rem;
+  float: right;
+}
+
+.sub-tasks {
+  margin-top: .48rem;
+  margin-left: 2.5rem;
+}
+
+.sub-task {
+  margin-bottom: .25rem;
+}

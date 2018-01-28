@@ -5,13 +5,21 @@
       <label for="task-name">Tarefa 1</label>
       <button class="destroy-task"></button>
     </legend>
+    <sub-tasks />
+    <add-sub-tasks />
   </section>
 </template>
 
 <script>
+import SubTasks from './SubTasks';
+import AddSubTasks from './AddSubTasks';
 
 export default {
   name: 'Task',
+  components: {
+    SubTasks,
+    AddSubTasks,
+  },
 };
 
 </script>
