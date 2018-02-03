@@ -1,6 +1,6 @@
 <template>
   <div>
-    <todo-menu />
+    <application-menu />
     <section class="wrapper create-todolist">
       <legend class="create-todolist__title">Criar Lista</legend>
       <create-list />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import TodoMenu from '@/components/shared/Menu';
+import ApplicationMenu from '@/components/shared/ApplicationMenu';
 
 import CreateList from './CreateList';
 import CreateTask from './CreateTask';
@@ -21,7 +21,7 @@ import TasksList from './TasksList';
 export default {
   name: 'NewTodoList',
   components: {
-    TodoMenu,
+    ApplicationMenu,
     CreateList,
     CreateTask,
     TasksList,

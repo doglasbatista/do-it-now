@@ -15,7 +15,7 @@
 import User from './User';
 
 export default {
-  name: 'Menu',
+  name: 'ApplicationMenu',
   components: {
     User,
   },

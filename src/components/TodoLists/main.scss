@@ -44,7 +44,7 @@
   &__control-box {
     gg:
       columns(22px 22px)
-      gutter(6px, 0)
+      gutters(6px, 0)
       technique(negative-margin)
       support(float);
   }

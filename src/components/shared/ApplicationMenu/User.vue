@@ -1,7 +1,7 @@
 <template>
   <div class="user-menu">
     <figure>
-      <img src="./imgs/avatar.png">
+      <img src="./avatar.png">
     </figure>
     <span class="header-welcome-message">Rick Sanchez</span>
   </div>
