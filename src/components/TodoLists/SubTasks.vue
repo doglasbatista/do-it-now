@@ -4,6 +4,7 @@
       v-for="(subTask, index) in subTasks"
       :key="index"
       :subTask="subTask"
+      :todoListIndex='todoListIndex'
     />
   </ul>
 </template>
@@ -16,6 +17,10 @@ export default {
   props: {
     subTasks: {
       type: Array,
+      required: true,
+    },
+    todoListIndex: {
+      type: Number,
       required: true,
     },
   },

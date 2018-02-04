@@ -34,6 +34,7 @@ export default {
     ]),
     createTask() {
       this.addTask([this.todoListIndex, this.taskTitle]);
+      this.taskTitle = '';
     },
   },
 };

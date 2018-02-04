@@ -6,9 +6,14 @@
       <button class="destroy-task"></button>
     </legend>
     <sub-tasks
-      :subTasks="task.subTasks"
+      :subTasks='task.subTasks'
+      :todoListIndex='todoListIndex'
+      :taskIndex='taskIndex'
     />
-    <new-sub-tasks />
+    <new-sub-tasks
+      :todoListIndex='todoListIndex'
+      :taskIndex='taskIndex'
+    />
   </section>
 </template>
 
@@ -21,6 +26,14 @@ export default {
   props: {
     task: {
       type: Object,
+      required: true,
+    },
+    todoListIndex: {
+      type: Number,
+      required: true,
+    },
+    taskIndex: {
+      type: Number,
       required: true,
     },
   },

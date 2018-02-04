@@ -5,7 +5,9 @@
     />
     <task
       v-for="(task, index) in tasks"
+      :todoListIndex='todoListIndex'
       :key='index'
+      :taskIndex='index'
       :task='task'
     />
   </section>
