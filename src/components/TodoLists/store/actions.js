@@ -9,4 +9,12 @@ export default {
     const [todoListIndex, taskIndex] = data;
     commit('ADD_SUB_TASK', [todoListIndex, taskIndex, state.subTaskStructure]);
   },
+  addTask({ commit, state }, data) {
+    const [todoListIndex, taskTitle] = data;
+    const newTask = Object.assign({}, state.taskStructure);
+
+    newTask.title = taskTitle;
+
+    commit('ADD_TASK', [todoListIndex, newTask]);
+  },
 };

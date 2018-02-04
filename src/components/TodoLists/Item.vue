@@ -14,6 +14,7 @@
     </div>
     <tasks
       :tasks='todoList.tasks'
+      :todoListIndex='todoListIndex'
     />
   </li>
 </template>
@@ -26,6 +27,10 @@ export default {
   props: {
     todoList: {
       type: Object,
+      required: true,
+    },
+    todoListIndex: {
+      type: Number,
       required: true,
     },
   },

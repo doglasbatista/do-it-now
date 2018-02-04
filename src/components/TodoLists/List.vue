@@ -4,6 +4,7 @@
       v-for="(todoList, index) in todoLists"
       :key='index'
       :todoList='todoList'
+      :todoListIndex='index'
     />
   </ul>
 </template>

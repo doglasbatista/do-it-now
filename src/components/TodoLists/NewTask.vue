@@ -7,14 +7,35 @@
       id="new-task"
       class="new-task"
       placeholder="Adicionar tarefa"
+      v-model="taskTitle"
+      @keyup.enter='createTask'
     >
   </div>
 </template>
 
 <script>
 
+import { mapActions } from 'vuex';
+
 export default {
   name: 'NewTask',
+  props: {
+    todoListIndex: {
+      type: Number,
+      required: true,
+    },
+  },
+  data: () => ({
+    taskTitle: '',
+  }),
+  methods: {
+    ...mapActions('TodoLists', [
+      'addTask',
+    ]),
+    createTask() {
+      this.addTask([this.todoListIndex, this.taskTitle]);
+    },
+  },
 };
 
 </script>

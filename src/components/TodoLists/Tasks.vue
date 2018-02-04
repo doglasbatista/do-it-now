@@ -1,6 +1,8 @@
 <template>
   <section class="tasks">
-    <new-task />
+    <new-task
+      :todoListIndex='todoListIndex'
+    />
     <task
       v-for="(task, index) in tasks"
       :key='index'
@@ -18,6 +20,10 @@ export default {
   props: {
     tasks: {
       type: Array,
+      required: true,
+    },
+    todoListIndex: {
+      type: Number,
       required: true,
     },
   },
