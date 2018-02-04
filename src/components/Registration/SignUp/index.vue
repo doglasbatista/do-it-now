@@ -3,8 +3,8 @@
     <background-pattern />
     <div class="sign-up__content">
       <img class="logo" src="~@/assets/imgs/logo.png">
-      <form class="card sign-up-form">
-        <back-button />
+      <back-button />
+      <form class="card sign-up-form" @submit.prevent="registerUser">
         <legend class="sign-up-form__title">Criar Conta</legend>
 
         <div class="form-group">
@@ -14,6 +14,7 @@
             class="no-radius-bottom"
             name="name"
             id="name"
+            v-validate="'required'"
             placeholder="Nome"
           >
         </div>
@@ -25,6 +26,7 @@
             class="no-radius"
             name="email"
             id="email"
+            v-validate="'required|email'"
             placeholder="Endereco de e-mail"
           >
         </div>
@@ -36,6 +38,7 @@
             class="not-radius-top"
             name="password"
             id="password"
+            v-validate="'required'"
             placeholder="Senha"
           >
         </div>
@@ -57,6 +60,17 @@ export default {
   components: {
     BackgroundPattern,
     BackButton,
+  },
+  methods: {
+    registerUser() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.$router.push({ name: 'TodoLists' });
+        } else {
+          this.$validator.validateAll();
+        }
+      });
+    },
   },
 };
 
