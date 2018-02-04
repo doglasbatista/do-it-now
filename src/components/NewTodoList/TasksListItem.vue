@@ -1,7 +1,7 @@
 <template>
   <li class="item">
     <input type="checkbox" name="task-name" id="task-name">
-    <label for="task-name">Tarefa 1</label>
+    <label for="task-name">{{todoList.title}}</label>
   </li>
 </template>
 
@@ -9,6 +9,12 @@
 
 export default {
   name: 'TasksListItem',
+  props: {
+    todoList: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 
 </script>

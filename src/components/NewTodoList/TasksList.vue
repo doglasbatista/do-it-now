@@ -1,18 +1,28 @@
 <template>
   <ul class="tasks-list">
-    <tasks-list-item />
-    <tasks-list-item />
-    <tasks-list-item />
+    <tasks-list-item
+      v-for="(todoList, index) in todoLists"
+      :key="index"
+      :todoListIndex="index"
+      :todoList="todoList"
+    />
   </ul>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import TasksListItem from './TasksListItem';
 
 export default {
   name: 'TasksList',
   components: {
     TasksListItem,
+  },
+  computed: {
+    ...mapGetters('TodoLists', [
+      'todoLists',
+    ]),
   },
 };
 

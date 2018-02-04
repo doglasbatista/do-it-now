@@ -4,9 +4,7 @@
     <section class="wrapper create-todolist">
       <legend class="create-todolist__title">Criar Lista</legend>
       <create-list />
-      <create-task />
       <tasks-list />
-      <button class="btn-primary">Criar Lista</button>
     </section>
   </div>
 </template>
@@ -15,7 +13,6 @@
 import ApplicationMenu from '@/components/shared/ApplicationMenu';
 
 import CreateList from './CreateList';
-import CreateTask from './CreateTask';
 import TasksList from './TasksList';
 
 export default {
@@ -23,7 +20,6 @@ export default {
   components: {
     ApplicationMenu,
     CreateList,
-    CreateTask,
     TasksList,
   },
 };
