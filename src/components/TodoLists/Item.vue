@@ -41,10 +41,10 @@ export default {
   },
   methods: {
     ...mapActions('TodoLists', [
-      'renomeTodoList',
+      'removeTodoList',
     ]),
     deleteTodoList() {
-      this.renomeTodoList(this.todoListIndex);
+      this.removeTodoList(this.todoListIndex);
     },
   },
 };

@@ -3,8 +3,10 @@
     <sub-task
       v-for="(subTask, index) in subTasks"
       :key="index"
+      :subTaskIndex="index"
       :subTask="subTask"
-      :todoListIndex='todoListIndex'
+      :todoListIndex="todoListIndex"
+      :taskIndex="taskIndex"
     />
   </ul>
 </template>
@@ -20,6 +22,10 @@ export default {
       required: true,
     },
     todoListIndex: {
+      type: Number,
+      required: true,
+    },
+    taskIndex: {
       type: Number,
       required: true,
     },

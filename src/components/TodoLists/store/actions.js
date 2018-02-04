@@ -53,7 +53,11 @@ export default {
 
     commit('ADD_TODO_LIST', newTodoList);
   },
-  renomeTodoList({ commit }, todoListIndex) {
-    commit('RENOME_TODO_LIST', todoListIndex);
+  removeTodoList({ commit }, todoListIndex) {
+    commit('REMOVE_TODO_LIST', todoListIndex);
+  },
+  removeSubTask({ commit }, data) {
+    const [todoListIndex, Taskindex, subTaskIndex] = data;
+    commit('REMOVE_SUB_TASK', [todoListIndex, Taskindex, subTaskIndex]);
   },
 };

@@ -12,8 +12,13 @@ export default {
     const [todoListIndex, Taskindex, subTaskData] = data;
     state.todoLists[todoListIndex].tasks[Taskindex].subTasks.push(Object.assign({}, subTaskData));
   },
-  RENOME_TODO_LIST(state, todoListIndex) {
+  REMOVE_TODO_LIST(state, todoListIndex) {
     state.todoLists.splice(todoListIndex, 1);
+  },
+  REMOVE_SUB_TASK(state, data) {
+    const [todoListIndex, Taskindex, subTaskIndex] = data;
+
+    state.todoLists[todoListIndex].tasks[Taskindex].subTasks.splice(subTaskIndex, 1);
   },
 };
 
