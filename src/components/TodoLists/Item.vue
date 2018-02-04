@@ -2,7 +2,7 @@
   <li class="todo-item">
     <div class="todo-item__indicator">
       <img class="list-icon" src="./imgs/list.png">
-      <span class="todo-item__name">Lista 1</span>
+      <span class="todo-item__name">{{todoList.title}}</span>
       <div class="todo-item__control-box">
         <button class="todo-item__control-item">
           <img src="./imgs/edit.png">
@@ -12,7 +12,9 @@
         </button>
       </div>
     </div>
-    <tasks />
+    <tasks
+      :tasks='todoList.tasks'
+    />
   </li>
 </template>
 
@@ -21,6 +23,12 @@ import Tasks from './Tasks';
 
 export default {
   name: 'TodoItem',
+  props: {
+    todoList: {
+      type: Object,
+      required: true,
+    },
+  },
   components: {
     Tasks,
   },

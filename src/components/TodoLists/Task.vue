@@ -2,10 +2,12 @@
   <section class="task">
     <legend class="task__title">
       <input type="checkbox" name="task-name" id="task-name">
-      <label for="task-name">Tarefa 1</label>
+      <label for="task-name">{{task.title}}</label>
       <button class="destroy-task"></button>
     </legend>
-    <sub-tasks />
+    <sub-tasks
+      :subTasks="task.subTasks"
+    />
     <new-sub-tasks />
   </section>
 </template>
@@ -16,6 +18,12 @@ import NewSubTasks from './NewSubTasks';
 
 export default {
   name: 'Task',
+  props: {
+    task: {
+      type: Object,
+      required: true,
+    },
+  },
   components: {
     SubTasks,
     NewSubTasks,

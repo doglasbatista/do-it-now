@@ -1,7 +1,11 @@
 <template>
   <section class="tasks">
     <new-task />
-    <task />
+    <task
+      v-for="(task, index) in tasks"
+      :key='index'
+      :task='task'
+    />
   </section>
 </template>
 
@@ -11,6 +15,12 @@ import NewTask from './NewTask';
 
 export default {
   name: 'Tasks',
+  props: {
+    tasks: {
+      type: Array,
+      required: true,
+    },
+  },
   components: {
     Task,
     NewTask,

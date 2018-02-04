@@ -1,22 +1,27 @@
 <template>
   <ul class="sub-tasks">
-    <li class="sub-task">
-      <input type="checkbox" name="subtask-name" id="subtask-name">
-      <label for="subtask-name">Tarefa 1</label>
-      <button class="destroy-task"></button>
-    </li>
-    <li class="sub-task">
-      <input type="checkbox" name="subtask-name" id="subtask-name">
-      <label for="subtask-name">Tarefa 1</label>
-      <button class="destroy-task"></button>
-    </li>
+    <sub-task
+      v-for="(subTask, index) in subTasks"
+      :key="index"
+      :subTask="subTask"
+    />
   </ul>
 </template>
 
 <script>
+import SubTask from './SubTask';
 
 export default {
   name: 'SubTasks',
+  props: {
+    subTasks: {
+      type: Array,
+      required: true,
+    },
+  },
+  components: {
+    SubTask,
+  },
 };
 
 </script>
