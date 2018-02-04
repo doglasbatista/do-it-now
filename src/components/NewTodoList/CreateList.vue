@@ -8,6 +8,7 @@
         id="new-list"
         class="new-list"
         v-model="listTitle"
+        v-validate="'required'"
         placeholder="Digite o nome da lista..."
       >
     </div>
@@ -41,8 +42,14 @@ export default {
       'addListWithTask',
     ]),
     createList() {
-      this.addListWithTask([this.listTitle, this.taskTitle]);
-      this.$router.push({ name: 'TodoLists' });
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.addListWithTask([this.listTitle, this.taskTitle]);
+          this.$router.push({ name: 'TodoLists' });
+        } else {
+          this.$validator.validateAll();
+        }
+      });
     },
   },
 };
