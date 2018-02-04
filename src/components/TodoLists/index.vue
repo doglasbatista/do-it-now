@@ -23,11 +23,11 @@ export default {
     ApplicationMenu,
   },
   async mounted() {
-    await this.addEmptyTodoList();
+    await this.initialPayload();
   },
   methods: {
     ...mapActions('TodoLists', [
-      'addEmptyTodoList',
+      'initialPayload',
     ]),
   },
 };

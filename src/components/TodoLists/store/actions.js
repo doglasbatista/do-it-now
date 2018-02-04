@@ -1,4 +1,20 @@
 export default {
+  initialPayload({ commit, state }) {
+    let newTodoList;
+    Array.from({ length: 2 }, (_, index) => `Lista ${index + 1}`)
+      .map((todoListTitle) => {
+        newTodoList = Object.assign({}, state.todoListStructure);
+        newTodoList.title = todoListTitle;
+        commit('ADD_TODO_LIST', newTodoList);
+        return true;
+      });
+  },
+  addTodoList({ commit, state }, todoListTitle) {
+    const newTodoList = Object.assign({}, state.todoListStructure);
+    newTodoList.title = todoListTitle;
+
+    commit('ADD_TODO_LIST', newTodoList);
+  },
   addEmptyTodoList({ commit, state }) {
     commit('ADD_TODO_LIST', state.todoListStructure);
   },
