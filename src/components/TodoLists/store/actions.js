@@ -3,14 +3,14 @@ export default {
     let newTodoList;
     Array.from({ length: 2 }, (_, index) => `Lista ${index + 1}`)
       .map((todoListTitle) => {
-        newTodoList = Object.assign({}, state.todoListStructure);
+        newTodoList = JSON.parse(JSON.stringify(state.todoListStructure));
         newTodoList.title = todoListTitle;
         commit('ADD_TODO_LIST', newTodoList);
         return true;
       });
   },
   addTodoList({ commit, state }, todoListTitle) {
-    const newTodoList = Object.assign({}, state.todoListStructure);
+    const newTodoList = JSON.parse(JSON.stringify(state.todoListStructure));
     newTodoList.title = todoListTitle;
 
     commit('ADD_TODO_LIST', newTodoList);
@@ -27,7 +27,7 @@ export default {
   },
   addTask({ commit, state }, data) {
     const [todoListIndex, taskTitle] = data;
-    const newTask = Object.assign({}, state.taskStructure);
+    const newTask = JSON.parse(JSON.stringify(state.taskStructure));
 
     newTask.title = taskTitle;
 
@@ -43,8 +43,8 @@ export default {
   addListWithTask({ commit, state }, data) {
     const [todoListTitle, taskTitle] = data;
 
-    const newTodoList = Object.assign({}, state.todoListStructure);
-    const newTask = Object.assign({}, state.taskStructure);
+    const newTodoList = JSON.parse(JSON.stringify(state.todoListStructure));
+    const newTask = JSON.parse(JSON.stringify(state.taskStructure));
 
     newTodoList.title = todoListTitle;
     newTask.title = taskTitle;
