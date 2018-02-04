@@ -3,7 +3,7 @@
     <legend class="task__title">
       <input type="checkbox" name="task-name" id="task-name">
       <label for="task-name">{{task.title}}</label>
-      <button class="destroy-task"></button>
+      <button class="destroy-task" @click.prevent="deleteTask"></button>
     </legend>
     <sub-tasks
       :subTasks='task.subTasks'
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import SubTasks from './SubTasks';
 import NewSubTasks from './NewSubTasks';
 
@@ -40,6 +42,14 @@ export default {
   components: {
     SubTasks,
     NewSubTasks,
+  },
+  methods: {
+    ...mapActions('TodoLists', [
+      'removeTask',
+    ]),
+    deleteTask() {
+      this.removeTask([this.todoListIndex, this.taskIndex]);
+    },
   },
 };
 

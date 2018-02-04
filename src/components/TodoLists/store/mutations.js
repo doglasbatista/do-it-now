@@ -15,6 +15,10 @@ export default {
   REMOVE_TODO_LIST(state, todoListIndex) {
     state.todoLists.splice(todoListIndex, 1);
   },
+  REMOVE_TASK(state, data) {
+    const [todoListIndex, taskindex] = data;
+    state.todoLists[todoListIndex].tasks.splice(taskindex, 1);
+  },
   REMOVE_SUB_TASK(state, data) {
     const [todoListIndex, Taskindex, subTaskIndex] = data;
 

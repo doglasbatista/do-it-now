@@ -56,6 +56,10 @@ export default {
   removeTodoList({ commit }, todoListIndex) {
     commit('REMOVE_TODO_LIST', todoListIndex);
   },
+  removeTask({ commit }, data) {
+    const [todoListIndex, taskIndex] = data;
+    commit('REMOVE_TASK', [todoListIndex, taskIndex]);
+  },
   removeSubTask({ commit }, data) {
     const [todoListIndex, Taskindex, subTaskIndex] = data;
     commit('REMOVE_SUB_TASK', [todoListIndex, Taskindex, subTaskIndex]);
