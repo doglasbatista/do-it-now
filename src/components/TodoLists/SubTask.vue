@@ -1,6 +1,6 @@
 <template>
   <li class="sub-task">
-    <input type="checkbox" name="subtask-name" id="subtask-name">
+    <input :checked="subTask.done" type="checkbox" name="subtask-name" id="subtask-name">
     <label for="subtask-name">{{subTask.title}}</label>
     <button class="destroy-task" @click.prevent="deleteSubtask"></button>
   </li>

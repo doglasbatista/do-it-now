@@ -1,7 +1,13 @@
 <template>
   <section class="task">
     <legend class="task__title">
-      <input type="checkbox" name="task-name" id="task-name">
+      <input
+        type="checkbox"
+        name="task-name"
+        id="task-name"
+        :checked="task.done"
+        @click="changeTaskStatus"
+      >
       <label for="task-name">{{task.title}}</label>
       <button class="destroy-task" @click.prevent="deleteTask"></button>
     </legend>
@@ -46,9 +52,13 @@ export default {
   methods: {
     ...mapActions('TodoLists', [
       'removeTask',
+      'toggleTaskStatus',
     ]),
     deleteTask() {
       this.removeTask([this.todoListIndex, this.taskIndex]);
+    },
+    changeTaskStatus() {
+      this.toggleTaskStatus([this.todoListIndex, this.taskIndex]);
     },
   },
 };

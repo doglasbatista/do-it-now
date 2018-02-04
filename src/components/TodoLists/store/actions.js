@@ -68,4 +68,14 @@ export default {
     const [todoListIndex, todoTitle] = data;
     commit('UPDATE_TODO_TITLE', [todoListIndex, todoTitle]);
   },
+  toggleTaskStatus({ commit, state }, data) {
+    const [todoListIndex, taskIndex] = data;
+    const task = state.todoLists[todoListIndex].tasks[taskIndex];
+
+    commit('TOGGLE_TASK_STATUS', [todoListIndex, taskIndex]);
+
+    const mutationName = task.done ? 'FINISH_SUB_TASK' : 'OPEN_SUB_TASK';
+    state.todoLists[todoListIndex].tasks[taskIndex].subTasks
+      .map((_, subTaskIndex) => commit(mutationName, [todoListIndex, taskIndex, subTaskIndex]));
+  },
 };

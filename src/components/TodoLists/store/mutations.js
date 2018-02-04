@@ -28,6 +28,20 @@ export default {
     const [todoListIndex, todoTitle] = data;
     state.todoLists[todoListIndex].title = todoTitle;
   },
+  TOGGLE_TASK_STATUS(state, data) {
+    const [todoListIndex, taskIndex] = data;
+
+    const task = state.todoLists[todoListIndex].tasks[taskIndex];
+    task.done = !task.done;
+  },
+  FINISH_SUB_TASK(state, data) {
+    const [todoListIndex, taskIndex, subTaskIndex] = data;
+    state.todoLists[todoListIndex].tasks[taskIndex].subTasks[subTaskIndex].done = true;
+  },
+  OPEN_SUB_TASK(state, data) {
+    const [todoListIndex, taskIndex, subTaskIndex] = data;
+    state.todoLists[todoListIndex].tasks[taskIndex].subTasks[subTaskIndex].done = false;
+  },
 };
 
 /* eslint-disable no-param-reassign */
