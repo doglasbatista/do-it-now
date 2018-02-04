@@ -1,5 +1,6 @@
 export default {
   initialPayload({ commit, state }) {
+    // MOST UGLY METHOD I'VE ALREADY DONE IN LIFE, BUT I NEED INITIAL DATA
     let newTodoList;
     Array.from({ length: 2 }, (_, index) => `Lista ${index + 1}`)
       .map((todoListTitle) => {
@@ -8,6 +9,37 @@ export default {
         commit('ADD_TODO_LIST', newTodoList);
         return true;
       });
+
+    newTodoList = JSON.parse(JSON.stringify(state.todoListStructure));
+    newTodoList.title = 'Lista 3';
+    let newTask;
+    let newSubTask;
+    Array.from({ length: 3 }, (_, index) => `Tarefa ${index + 1}`)
+      .map((taskTitle) => {
+        newTask = JSON.parse(JSON.stringify(state.taskStructure));
+        newTask.title = taskTitle;
+        return newTask;
+      })
+      .map((task, index) => {
+        newSubTask = JSON.parse(JSON.stringify(state.subTaskStructure));
+        newSubTask.title = `Subtarefa ${index + 1}`;
+        task.subTasks.push(newSubTask);
+        return task;
+      })
+      .map((task) => {
+        newTodoList.tasks.push(task);
+        return true;
+      });
+
+    Array.from({ length: 2 }, (_, index) => {
+      newSubTask = JSON.parse(JSON.stringify(state.subTaskStructure));
+      newSubTask.title = `Subtarefa ${index + 2}`;
+
+      newTodoList.tasks[0].subTasks.push(newSubTask);
+      return true;
+    });
+
+    commit('ADD_TODO_LIST', newTodoList);
   },
   addTodoList({ commit, state }, todoListTitle) {
     const newTodoList = JSON.parse(JSON.stringify(state.todoListStructure));
