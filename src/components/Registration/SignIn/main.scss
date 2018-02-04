@@ -4,6 +4,11 @@
   &__content {
     width: 37.5rem;
     margin: 4.875rem auto 0;
+    position: relative;
+  }
+  .back-button {
+    top: 6rem;
+    z-index: z(limbo);
   }
 }
 

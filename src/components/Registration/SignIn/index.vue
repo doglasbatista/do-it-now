@@ -3,8 +3,8 @@
     <background-pattern />
     <div class="sign-in__content">
       <img class="logo" src="~@/assets/imgs/logo.png">
-      <form class="card sign-in-form">
-        <back-button />
+      <back-button />
+      <form class="card sign-in-form" @submit.prevent="login">
         <legend class="sign-in-form__title">Entrar</legend>
 
         <div class="form-group">
@@ -14,6 +14,7 @@
             class="no-radius-bottom"
             name="name"
             id="name"
+            v-validate="'required|email'"
             placeholder="Nome"
           >
         </div>
@@ -25,6 +26,7 @@
             class="not-radius-top"
             name="password"
             id="password"
+            v-validate="'required'"
             placeholder="Senha"
           >
         </div>
@@ -50,6 +52,17 @@ export default {
   components: {
     BackgroundPattern,
     BackButton,
+  },
+  methods: {
+    login() {
+      this.$validator.validateAll().then((result) => {
+        if (result) {
+          this.$router.push({ name: 'TodoLists' });
+        } else {
+          this.$validator.validateAll();
+        }
+      });
+    },
   },
 };
 
