@@ -28,3 +28,12 @@ button {
   width: 12.5rem;
   margin: 1.9rem auto 0;
 }
+
+.new-todo-list {
+  .content {
+    position: relative;
+  }
+  .back-button {
+    margin-top: -3rem
+  }
+}
