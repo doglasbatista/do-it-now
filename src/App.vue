@@ -5,8 +5,18 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'App',
+  async mounted() {
+    await this.initialPayload();
+  },
+  methods: {
+    ...mapActions('TodoLists', [
+      'initialPayload',
+    ]),
+  },
 };
 </script>
 

@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
-
 import ApplicationMenu from '@/components/shared/ApplicationMenu';
 
 import TodoList from './List';
@@ -21,14 +19,6 @@ export default {
   components: {
     TodoList,
     ApplicationMenu,
-  },
-  async mounted() {
-    await this.initialPayload();
-  },
-  methods: {
-    ...mapActions('TodoLists', [
-      'initialPayload',
-    ]),
   },
 };
 
