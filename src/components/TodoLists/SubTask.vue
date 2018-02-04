@@ -1,7 +1,13 @@
 <template>
   <li class="sub-task">
-    <input :checked="subTask.done" type="checkbox" name="subtask-name" id="subtask-name">
-    <label for="subtask-name">{{subTask.title}}</label>
+    <input
+      type="checkbox"
+      :name="inputIdentifier"
+      :id="inputIdentifier"
+      :checked="subTask.done"
+      @click="changeSubTaskStatus"
+    >
+    <label :for="inputIdentifier">{{subTask.title}}</label>
     <button class="destroy-task" @click.prevent="deleteSubtask"></button>
   </li>
 </template>
@@ -28,12 +34,21 @@ export default {
       required: true,
     },
   },
+  computed: {
+    inputIdentifier() {
+      return `subtask-${this.subTaskIndex}-name`;
+    },
+  },
   methods: {
     ...mapActions('TodoLists', [
       'removeSubTask',
+      'toggleSubTaskStatus',
     ]),
     deleteSubtask() {
       this.removeSubTask([this.todoListIndex, this.taskIndex, this.subTaskIndex]);
+    },
+    changeSubTaskStatus() {
+      this.toggleSubTaskStatus([this.todoListIndex, this.taskIndex, this.subTaskIndex]);
     },
   },
 };

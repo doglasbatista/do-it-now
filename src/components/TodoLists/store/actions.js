@@ -78,4 +78,20 @@ export default {
     state.todoLists[todoListIndex].tasks[taskIndex].subTasks
       .map((_, subTaskIndex) => commit(mutationName, [todoListIndex, taskIndex, subTaskIndex]));
   },
+  toggleSubTaskStatus({ commit, state }, data) {
+    const [todoListIndex, taskIndex, subTaskIndex] = data;
+    const parentTask = state.todoLists[todoListIndex].tasks[taskIndex];
+
+    commit('TOGGLE_SUB_TASK_STATUS', [todoListIndex, taskIndex, subTaskIndex]);
+
+    const thereIsOpenTask = parentTask.subTasks
+      .map(subTask => subTask.done)
+      .includes(false);
+
+    if (thereIsOpenTask) {
+      commit('OPEN_TASK', [todoListIndex, taskIndex]);
+    } else {
+      commit('FINISH_TASK', [todoListIndex, taskIndex]);
+    }
+  },
 };

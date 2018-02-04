@@ -34,6 +34,16 @@ export default {
     const task = state.todoLists[todoListIndex].tasks[taskIndex];
     task.done = !task.done;
   },
+  FINISH_TASK(state, data) {
+    const [todoListIndex, taskIndex] = data;
+    const task = state.todoLists[todoListIndex].tasks[taskIndex];
+    task.done = true;
+  },
+  OPEN_TASK(state, data) {
+    const [todoListIndex, taskIndex] = data;
+    const task = state.todoLists[todoListIndex].tasks[taskIndex];
+    task.done = false;
+  },
   FINISH_SUB_TASK(state, data) {
     const [todoListIndex, taskIndex, subTaskIndex] = data;
     state.todoLists[todoListIndex].tasks[taskIndex].subTasks[subTaskIndex].done = true;
@@ -41,6 +51,11 @@ export default {
   OPEN_SUB_TASK(state, data) {
     const [todoListIndex, taskIndex, subTaskIndex] = data;
     state.todoLists[todoListIndex].tasks[taskIndex].subTasks[subTaskIndex].done = false;
+  },
+  TOGGLE_SUB_TASK_STATUS(state, data) {
+    const [todoListIndex, taskIndex, subTaskIndex] = data;
+    const subTask = state.todoLists[todoListIndex].tasks[taskIndex].subTasks[subTaskIndex];
+    subTask.done = !subTask.done;
   },
 };
 
