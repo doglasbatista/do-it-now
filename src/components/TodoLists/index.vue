@@ -3,7 +3,7 @@
     <application-menu />
     <div class="todo-lists-content">
       <legend class="todo-lists__title">Listas</legend>
-      <button class="add-item"></button>
+      <router-link class="add-item" :to="{ name: 'NewTodoList' }" tag="button"></router-link>
       <todo-list />
     </div>
   </section>
