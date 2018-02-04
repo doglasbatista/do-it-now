@@ -53,4 +53,7 @@ export default {
 
     commit('ADD_TODO_LIST', newTodoList);
   },
+  renomeTodoList({ commit }, todoListIndex) {
+    commit('RENOME_TODO_LIST', todoListIndex);
+  },
 };

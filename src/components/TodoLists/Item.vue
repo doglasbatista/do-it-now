@@ -7,7 +7,7 @@
         <button class="todo-item__control-item">
           <img src="./imgs/edit.png">
         </button>
-        <button class="todo-item__control-item">
+        <button class="todo-item__control-item" @click.prevent="deleteTodoList">
           <img src="./imgs/delete-list.png">
         </button>
       </div>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import Tasks from './Tasks';
 
 export default {
@@ -36,6 +38,14 @@ export default {
   },
   components: {
     Tasks,
+  },
+  methods: {
+    ...mapActions('TodoLists', [
+      'renomeTodoList',
+    ]),
+    deleteTodoList() {
+      this.renomeTodoList(this.todoListIndex);
+    },
   },
 };
 

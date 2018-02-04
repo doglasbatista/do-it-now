@@ -12,6 +12,9 @@ export default {
     const [todoListIndex, Taskindex, subTaskData] = data;
     state.todoLists[todoListIndex].tasks[Taskindex].subTasks.push(Object.assign({}, subTaskData));
   },
+  RENOME_TODO_LIST(state, todoListIndex) {
+    state.todoLists.splice(todoListIndex, 1);
+  },
 };
 
 /* eslint-disable no-param-reassign */
