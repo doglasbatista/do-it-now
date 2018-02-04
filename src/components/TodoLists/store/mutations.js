@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 
 export default {
-  ADD_EMPTY_TODO_LIST(state, todoList) {
+  ADD_TODO_LIST(state, todoList) {
     state.todoLists.push(Object.assign({}, todoList));
   },
   ADD_TASK(state, data) {
