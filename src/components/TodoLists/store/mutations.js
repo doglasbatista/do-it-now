@@ -24,6 +24,10 @@ export default {
 
     state.todoLists[todoListIndex].tasks[Taskindex].subTasks.splice(subTaskIndex, 1);
   },
+  UPDATE_TODO_TITLE(state, data) {
+    const [todoListIndex, todoTitle] = data;
+    state.todoLists[todoListIndex].title = todoTitle;
+  },
 };
 
 /* eslint-disable no-param-reassign */

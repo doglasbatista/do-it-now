@@ -2,9 +2,15 @@
   <li class="todo-item">
     <div class="todo-item__indicator">
       <img class="list-icon" src="./imgs/list.png">
-      <span class="todo-item__name">{{todoList.title}}</span>
+      <edit-todo-name
+        :todoListIndex="todoListIndex"
+        :todoName="todoList.title"
+        @canNotEdit='toggleCanEdit'
+        v-if="canEdit"
+      />
+      <span class="todo-item__name" v-else>{{todoList.title}}</span>
       <div class="todo-item__control-box">
-        <button class="todo-item__control-item">
+        <button class="todo-item__control-item" @click.prevent="toggleCanEdit">
           <img src="./imgs/edit.png">
         </button>
         <button class="todo-item__control-item" @click.prevent="deleteTodoList">
@@ -23,9 +29,13 @@
 import { mapActions } from 'vuex';
 
 import Tasks from './Tasks';
+import EditTodoName from './EditTodoName';
 
 export default {
   name: 'TodoItem',
+  data: () => ({
+    canEdit: false,
+  }),
   props: {
     todoList: {
       type: Object,
@@ -38,6 +48,7 @@ export default {
   },
   components: {
     Tasks,
+    EditTodoName,
   },
   methods: {
     ...mapActions('TodoLists', [
@@ -45,6 +56,9 @@ export default {
     ]),
     deleteTodoList() {
       this.removeTodoList(this.todoListIndex);
+    },
+    toggleCanEdit() {
+      this.canEdit = !this.canEdit;
     },
   },
 };
