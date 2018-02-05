@@ -1,6 +1,9 @@
 .card {
   background-color: $light-yellow;
   border-radius: .3rem;
-  padding: 6.25rem;
+  padding: 6.25rem 3.25rem;
   position: relative;
+  @include respond-to(xsmall) {
+    padding: 6.25rem;
+  }
 }

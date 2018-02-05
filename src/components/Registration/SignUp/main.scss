@@ -3,7 +3,8 @@
 
 .sign-up {
   &__content {
-    width: 37.5rem;
+    width: 95%;
+    max-width: 37.5rem;
     margin: 4.875rem auto 0;
     position: relative;
   }
@@ -41,6 +42,6 @@
 }
 
 .form-group:last-child {
-  width: 15.63rem;
+  max-width: 15.63rem;
   margin: .9rem auto 0;
 }

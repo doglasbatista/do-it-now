@@ -2,7 +2,8 @@
 
 .sign-in {
   &__content {
-    width: 37.5rem;
+    width: 95%;
+    max-width: 37.5rem;
     margin: 4.875rem auto 0;
     position: relative;
   }
@@ -27,7 +28,7 @@
 }
 
 .form-group:nth-last-child(2) {
-  width: 15.63rem;
+  max-width: 15.63rem;
   margin: 1.1rem auto 0;
 }
 
