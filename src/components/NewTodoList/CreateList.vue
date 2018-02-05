@@ -61,6 +61,10 @@ export default {
           this.addCompleteTodoList(this.todoList);
           this.resetCreateListada();
         } else {
+          this.$notify({
+            message: 'Verifique os dados do formulario',
+            type: 'danger',
+          });
           this.$validator.validateAll();
         }
       });

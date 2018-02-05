@@ -67,6 +67,10 @@ export default {
         if (result) {
           this.$router.push({ name: 'TodoLists' });
         } else {
+          this.$notify({
+            message: 'Verifique os dados informados',
+            type: 'danger',
+          });
           this.$validator.validateAll();
         }
       });
