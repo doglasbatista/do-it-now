@@ -41,6 +41,9 @@ export default {
 
     commit('ADD_TODO_LIST', newTodoList);
   },
+  addCompleteTodoList({ commit }, todoList) {
+    commit('ADD_TODO_LIST', todoList);
+  },
   addTodoList({ commit, state }, todoListTitle) {
     const newTodoList = JSON.parse(JSON.stringify(state.todoListStructure));
     newTodoList.title = todoListTitle;

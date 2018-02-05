@@ -7,21 +7,20 @@
         name="new-list"
         id="new-list"
         class="new-list"
-        v-model="listTitle"
+        v-model="todoList.title"
         v-validate="'required'"
         placeholder="Digite o nome da lista..."
       >
     </div>
-    <div class="form-group">
-      <label for="new-task">Adicionar tarefa</label>
-      <input
-        type="text"
-        name="new-task"
-        id="new-task"
-        class="new-task"
-        v-model="taskTitle"
-        placeholder="Adicionar tarefa"
-      >
+    <div class="new-task-group">
+      <task-title
+        v-for="(task, index) in tasks"
+        :key="index"
+        :taskIndex="index"
+        :task="task"
+        @updateTaskTitle="updateTaskTitle"
+      />
+      <a class="new-task-icon" @click.prevent="addTask"></a>
     </div>
 
     <button class="btn-primary">Criar Lista</button>
@@ -29,27 +28,54 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
+
+import TaskTitle from './TaskTitle';
 
 export default {
   name: 'CreateList',
   data: () => ({
-    listTitle: '',
-    taskTitle: '',
+    todoList: {},
+    tasks: [],
   }),
+  components: {
+    TaskTitle,
+  },
+  mounted() {
+    this.resetCreateListada();
+  },
+  computed: {
+    ...mapGetters('TodoLists', [
+      'todoListStructure',
+      'taskStructure',
+    ]),
+  },
   methods: {
     ...mapActions('TodoLists', [
-      'addListWithTask',
+      'addCompleteTodoList',
     ]),
     createList() {
       this.$validator.validateAll().then((result) => {
         if (result) {
-          this.addListWithTask([this.listTitle, this.taskTitle]);
-          this.$router.push({ name: 'TodoLists' });
+          this.todoList.tasks = JSON.parse(JSON.stringify(this.tasks));
+          this.addCompleteTodoList(this.todoList);
+          this.resetCreateListada();
         } else {
           this.$validator.validateAll();
         }
       });
+    },
+    addTask() {
+      this.tasks.push(JSON.parse(JSON.stringify(this.taskStructure)));
+    },
+    updateTaskTitle(taskIndex, newValue) {
+      this.tasks[taskIndex].title = newValue;
+    },
+    resetCreateListada() {
+      this.todoList = JSON.parse(JSON.stringify(this.todoListStructure));
+
+      this.tasks.length = 0;
+      this.addTask();
     },
   },
 };

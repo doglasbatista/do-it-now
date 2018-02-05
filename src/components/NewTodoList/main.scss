@@ -17,10 +17,19 @@
   margin: 0 auto .625rem;
 }
 
-[type='text'].new-task {
-  background-image: url(~@/assets/imgs/add-item.png);
-  background-repeat: no-repeat;
-  background-position: 98% 50%;
+.new-task-group {
+  position: relative;
+  .new-task-icon {
+    position: absolute;
+    display: inline-block;
+    background-image: url(~@/assets/imgs/add-item.png);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    width: 1.375rem;
+    height: 1.375rem;
+    right: .7rem;
+    bottom: .5rem;
+  }
 }
 
 button {
