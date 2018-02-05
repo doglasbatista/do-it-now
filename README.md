@@ -23,7 +23,7 @@
 #### Criação de lista:
   - [x] Aplicar validações no formulário
   - [x] Nome da lista é obrigatório
-  - [ ] Permitir a criação de várias tarefas
+  - [x] Permitir a criação de várias tarefas
 
 ## Como rodar a aplicação
 
