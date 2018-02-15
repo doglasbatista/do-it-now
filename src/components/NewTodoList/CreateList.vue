@@ -65,6 +65,7 @@ export default {
           }
           this.addCompleteTodoList(this.todoList);
           this.resetCreateListada();
+          this.$router.push({ name: 'TodoLists' });
         } else {
           this.$notify({
             message: 'Verifique os dados do formulario',
