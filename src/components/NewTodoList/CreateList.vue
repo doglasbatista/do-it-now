@@ -58,6 +58,11 @@ export default {
       this.$validator.validateAll().then((result) => {
         if (result) {
           this.todoList.tasks = JSON.parse(JSON.stringify(this.tasks));
+          for (var i = 0; i < this.todoList.tasks.length; i++) {
+            if (this.todoList.tasks[i].title === '') {
+              delete this.todoList.tasks[i];
+            }
+          }
           this.addCompleteTodoList(this.todoList);
           this.resetCreateListada();
         } else {
