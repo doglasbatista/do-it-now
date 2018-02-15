@@ -37,7 +37,8 @@
     cursor: pointer;
     margin: .65rem .3rem .2rem .6rem;
     gg:
-      columns(20px auto 60px, 100%);
+      columns(20px auto 60px, 100%)
+      gutter(10px, 0);
   }
   &:not(:last-child) {
     border-bottom: .0625rem solid $green;
@@ -70,8 +71,8 @@
   background-image: url(./imgs/add-item.png);
   background-repeat: no-repeat;
   background-position: 98% 50%;
-  width: 95%;
-  max-width: 31.25rem;
+  width: 97%;
+  max-width: 32.35rem;
   display: block;
   margin: 0 auto .8rem;
 }
