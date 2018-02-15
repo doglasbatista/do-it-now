@@ -8,7 +8,6 @@
       <section class="wrapper create-todolist">
         <legend class="create-todolist__title">Criar Lista</legend>
         <create-list />
-        <tasks-list />
       </section>
     </div>
   </div>
@@ -19,14 +18,12 @@ import ApplicationMenu from '@/components/shared/ApplicationMenu';
 import BackButton from '@/components/shared/BackButton';
 
 import CreateList from './CreateList';
-import TasksList from './TasksList';
 
 export default {
   name: 'NewTodoList',
   components: {
     ApplicationMenu,
     CreateList,
-    TasksList,
     BackButton,
   },
 };
