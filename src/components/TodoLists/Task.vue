@@ -3,12 +3,12 @@
     <legend class="task__title">
       <input
         type="checkbox"
-        name="task-name"
-        id="task-name"
+        :name="taskIdentifier"
+        :id="taskIdentifier"
         :checked="task.done"
         @click="changeTaskStatus"
       >
-      <label for="task-name">{{task.title}}</label>
+      <label :for="taskIdentifier">{{task.title}}</label>
       <button class="destroy-task" @click.prevent="deleteTask"></button>
     </legend>
     <sub-tasks
@@ -48,6 +48,11 @@ export default {
   components: {
     SubTasks,
     NewSubTasks,
+  },
+  computed: {
+    taskIdentifier() {
+      return `task-${this.taskIndex}-name`;
+    },
   },
   methods: {
     ...mapActions('TodoLists', [

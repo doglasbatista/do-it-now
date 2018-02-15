@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     inputIdentifier() {
-      return `subtask-${this.subTaskIndex}-name`;
+      return `subtask-${this.todoListIndex}${this.taskIndex}${this.subTaskIndex}-name`;
     },
   },
   methods: {
